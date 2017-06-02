@@ -11,6 +11,11 @@ void handler(int signum)
         int s,i;
 	for(i = 0; i < 17; i++)
 	{
+	//	sleep(1);
+		FILE *f;
+		f=fopen("", "a");
+		fprintf(f,"%d\n", getpid());
+		fclose(f);
         	kill(pid, SIGINT);
        		wait(&s);
 	}
